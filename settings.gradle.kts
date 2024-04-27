@@ -1,6 +1,6 @@
 import java.util.Locale
 
-rootProject.name = "PatchedVault"
+rootProject.name = "Box"
 
 pluginManagement {
     repositories {
@@ -14,7 +14,7 @@ pluginManagement {
         }
     }
 }
-for (name in listOf("patched-vault")) {
+for (name in listOf("CoinCoffer")) {
     val projName = name.lowercase(Locale.ENGLISH)
     includeBuild(projName)
 }
