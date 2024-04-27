@@ -1,0 +1,4 @@
+--- /dev/null
++++ b/settings.gradle.kts
+@@ -1,0 +_,1 @@
++rootProject.name = "CoinCoffer"
