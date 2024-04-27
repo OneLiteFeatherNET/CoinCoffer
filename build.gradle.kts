@@ -1,19 +1,18 @@
 plugins {
-    id("java")
+    id("net.onelitefeather.gitpatcher") version "1.0.0-SNAPSHOT"
 }
+
 
 group = "dev.onelitefeather.plugin"
 version = "1.0.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-}
-
-tasks.test {
-    useJUnitPlatform()
+gitpatcher {
+    upstreams {
+        useStandardUpstream("Vault") {
+            url.set(github("milkbowl", "vault"))
+            ref = "460cb21c6215433da526192720de40b6662f5f99"
+            patchDir =  layout.projectDirectory.dir("patches")
+            upstreamDir = layout.projectDirectory.dir("vault")
+            outputDir = layout.projectDirectory.dir("patched-vault")
+        }
+    }
 }
