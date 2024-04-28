@@ -1,0 +1,138 @@
+--- a/src/main/java/net/milkbowl/vault/permission/Permission.java
++++ b/src/main/java/net/milkbowl/vault/permission/Permission.java
+@@ -38,19 +_,19 @@
+      * Gets name of permission method
+      * @return Name of Permission Method
+      */
+-    abstract public String getName();
++    public abstract String getName();
+ 
+     /**
+      * Checks if permission method is enabled.
+      * @return Success or Failure
+      */
+-    abstract public boolean isEnabled();
++    public abstract boolean isEnabled();
+     
+     /**
+      * Returns if the permission system is or attempts to be compatible with super-perms.
+      * @return True if this permission implementation works with super-perms
+      */
+-    abstract public boolean hasSuperPermsCompat();
++    public abstract boolean hasSuperPermsCompat();
+     
+     /**
+      * @deprecated As of VaultAPI 1.4 use {@link #playerHas(String, OfflinePlayer, String)} instead.
+@@ -102,7 +_,7 @@
+      * @deprecated As of VaultAPI 1.4 use {@link #playerHas(String, OfflinePlayer, String)} instead.
+      */
+     @Deprecated
+-    abstract public boolean playerHas(String world, String player, String permission);
++    public abstract boolean playerHas(String world, String player, String permission);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {@link #playerHas(String, OfflinePlayer, String)} instead.
+@@ -157,7 +_,7 @@
+      * @return Success or Failure
+      */
+     @Deprecated
+-    abstract public boolean playerAdd(String world, String player, String permission);
++    public abstract boolean playerAdd(String world, String player, String permission);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {@link #playerAdd(String, OfflinePlayer, String)} instead.
+@@ -294,7 +_,7 @@
+      * @deprecated As of VaultAPI 1.4 use {@link #playerRemove(String, OfflinePlayer, String)} instead.
+      */
+     @Deprecated
+-    abstract public boolean playerRemove(String world, String player, String permission);
++    public abstract boolean playerRemove(String world, String player, String permission);
+ 
+     /**
+      * Remove permission from a player.
+@@ -389,7 +_,7 @@
+      * @param permission Permission node
+      * @return Success or Failure
+      */
+-    abstract public boolean groupHas(String world, String group, String permission);
++    public abstract boolean groupHas(String world, String group, String permission);
+ 
+     /**
+      * Checks if group has a permission node.
+@@ -418,7 +_,7 @@
+      * @param permission Permission node
+      * @return Success or Failure
+      */
+-    abstract public boolean groupAdd(String world, String group, String permission);
++    public abstract boolean groupAdd(String world, String group, String permission);
+ 
+     /**
+      * Add permission to a group.
+@@ -447,7 +_,7 @@
+      * @param permission Permission node
+      * @return Success or Failure
+      */
+-    abstract public boolean groupRemove(String world, String group, String permission);
++    public abstract boolean groupRemove(String world, String group, String permission);
+ 
+     /**
+      * Remove permission from a group.
+@@ -470,7 +_,7 @@
+      * @deprecated As of VaultAPI 1.4 use {@link #playerInGroup(String, OfflinePlayer, String)} instead.
+      */
+     @Deprecated
+-    abstract public boolean playerInGroup(String world, String player, String group);
++    public abstract boolean playerInGroup(String world, String player, String group);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {@link #playerInGroup(String, OfflinePlayer, String)} instead.
+@@ -517,7 +_,7 @@
+      * @deprecated As of VaultAPI 1.4 use {@link #playerAddGroup(String, OfflinePlayer, String)} instead.
+      */
+     @Deprecated
+-    abstract public boolean playerAddGroup(String world, String player, String group);
++    public abstract boolean playerAddGroup(String world, String player, String group);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {@link #playerAddGroup(String, OfflinePlayer, String)} instead.
+@@ -564,7 +_,7 @@
+      * @deprecated As of VaultAPI 1.4 use {@link #playerRemoveGroup(String, OfflinePlayer, String)} instead.
+      */
+     @Deprecated
+-    abstract public boolean playerRemoveGroup(String world, String player, String group);
++    public abstract boolean playerRemoveGroup(String world, String player, String group);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {@link #playerRemoveGroup(String, OfflinePlayer, String)} instead.
+@@ -611,7 +_,7 @@
+      * @deprecated As of VaultAPI 1.4 use {@link #getPlayerGroups(String, OfflinePlayer)} instead.
+      */
+     @Deprecated
+-    abstract public String[] getPlayerGroups(String world, String player);
++    public abstract String[] getPlayerGroups(String world, String player);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {@link #getPlayerGroups(String, OfflinePlayer)} instead.
+@@ -653,7 +_,7 @@
+      * @deprecated As of VaultAPI 1.4 use {@link #getPrimaryGroup(String, OfflinePlayer)} instead.
+      */
+     @Deprecated
+-    abstract public String getPrimaryGroup(String world, String player);
++    public abstract String getPrimaryGroup(String world, String player);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {@link #getPrimaryGroup(String, OfflinePlayer)} instead.
+@@ -695,11 +_,11 @@
+      * Returns a list of all known groups
+      * @return an Array of String of all groups
+      */
+-    abstract public String[] getGroups();
++    public abstract String[] getGroups();
+     
+     /**
+      * Returns true if the given implementation supports groups.
+      * @return true if the implementation supports groups
+      */
+-    abstract public boolean hasGroupSupport();
++    public abstract boolean hasGroupSupport();
+ }

@@ -1,0 +1,225 @@
+--- a/src/main/java/net/milkbowl/vault/chat/Chat.java
++++ b/src/main/java/net/milkbowl/vault/chat/Chat.java
+@@ -36,13 +_,13 @@
+      * Gets name of permission method
+      * @return Name of Permission Method
+      */
+-    abstract public String getName();
++    public abstract String getName();
+ 
+     /**
+      * Checks if permission method is enabled.
+      * @return Success or Failure
+      */
+-    abstract public boolean isEnabled();
++    public abstract boolean isEnabled();
+     
+     /**
+      * @deprecated As of VaultAPI 1.4 use {{@link #getPlayerPrefix(String, OfflinePlayer)} instead.
+@@ -53,7 +_,7 @@
+      * @return Prefix
+      */
+     @Deprecated
+-    abstract public String getPlayerPrefix(String world, String player);
++    public abstract String getPlayerPrefix(String world, String player);
+     
+     /**
+      * Get a players prefix in the given world
+@@ -100,7 +_,7 @@
+      * @param prefix Prefix
+      */
+     @Deprecated
+-    abstract public void setPlayerPrefix(String world, String player, String prefix);
++    public abstract void setPlayerPrefix(String world, String player, String prefix);
+ 
+     /**
+      * Sets players prefix in the given world.
+@@ -147,7 +_,7 @@
+      * @return Suffix
+      */
+     @Deprecated
+-    abstract public String getPlayerSuffix(String world, String player);
++    public abstract String getPlayerSuffix(String world, String player);
+ 
+     /**
+      * Get players suffix in the specified world.
+@@ -192,7 +_,7 @@
+      * @param suffix Suffix
+      */
+     @Deprecated
+-    abstract public void setPlayerSuffix(String world, String player, String suffix);
++    public abstract void setPlayerSuffix(String world, String player, String suffix);
+ 
+     /**
+      * Set players suffix for the world specified
+@@ -234,7 +_,7 @@
+      * @param group Group name
+      * @return Prefix
+      */
+-    abstract public String getGroupPrefix(String world, String group);
++    public abstract String getGroupPrefix(String world, String group);
+ 
+     /**
+      * Get group prefix
+@@ -252,7 +_,7 @@
+      * @param group Group name
+      * @param prefix Prefix
+      */
+-    abstract public void setGroupPrefix(String world, String group, String prefix);
++    public abstract void setGroupPrefix(String world, String group, String prefix);
+ 
+     /**
+      * Set group prefix
+@@ -270,7 +_,7 @@
+      * @param group Group name
+      * @return Suffix
+      */
+-    abstract public String getGroupSuffix(String world, String group);
++    public abstract String getGroupSuffix(String world, String group);
+ 
+     /**
+      * Get group suffix
+@@ -288,7 +_,7 @@
+      * @param group Group name
+      * @param suffix Suffix
+      */
+-    abstract public void setGroupSuffix(String world, String group, String suffix);
++    public abstract void setGroupSuffix(String world, String group, String suffix);
+ 
+     /**
+      * Set group suffix
+@@ -322,7 +_,7 @@
+      * @return Value
+      */
+     @Deprecated
+-    abstract public int getPlayerInfoInteger(String world, String player, String node, int defaultValue);
++    public abstract int getPlayerInfoInteger(String world, String player, String node, int defaultValue);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {{@link #getPlayerInfoInteger(String, OfflinePlayer, String, int)} instead.
+@@ -371,7 +_,7 @@
+      * @param value Value to set
+      */
+     @Deprecated
+-    abstract public void setPlayerInfoInteger(String world, String player, String node, int value);
++    public abstract void setPlayerInfoInteger(String world, String player, String node, int value);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {{@link #setPlayerInfoInteger(String, OfflinePlayer, String, int)} instead.
+@@ -405,7 +_,7 @@
+      * @param defaultValue Default value
+      * @return Value
+      */
+-    abstract public int getGroupInfoInteger(String world, String group, String node, int defaultValue);
++    public abstract int getGroupInfoInteger(String world, String group, String node, int defaultValue);
+ 
+     /**
+      * Get a groups informational node (Integer) value
+@@ -462,7 +_,7 @@
+      * @return Value
+      */
+     @Deprecated
+-    abstract public double getPlayerInfoDouble(String world, String player, String node, double defaultValue);
++    public abstract double getPlayerInfoDouble(String world, String player, String node, double defaultValue);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {{@link #getPlayerInfoDouble(String, OfflinePlayer, String, double)} instead
+@@ -510,7 +_,7 @@
+      * @param value Value to set
+      */
+     @Deprecated
+-    abstract public void setPlayerInfoDouble(String world, String player, String node, double value);
++    public abstract void setPlayerInfoDouble(String world, String player, String node, double value);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {{@link #setPlayerInfoDouble(String, OfflinePlayer, String, double)} instead.
+@@ -543,7 +_,7 @@
+      * @param defaultValue Default value
+      * @return Value
+      */
+-    abstract public double getGroupInfoDouble(String world, String group, String node, double defaultValue);
++    public abstract double getGroupInfoDouble(String world, String group, String node, double defaultValue);
+ 
+     /**
+      * Get a groups informational node (Double) value
+@@ -564,7 +_,7 @@
+      * @param node Permission node
+      * @param value Value to set
+      */
+-    abstract public void setGroupInfoDouble(String world, String group, String node, double value);
++    public abstract void setGroupInfoDouble(String world, String group, String node, double value);
+ 
+     /**
+      * Set a groups informational node (Double) value
+@@ -600,7 +_,7 @@
+      * @return Value
+      */
+     @Deprecated
+-    abstract public boolean getPlayerInfoBoolean(String world, String player, String node, boolean defaultValue);
++    public abstract boolean getPlayerInfoBoolean(String world, String player, String node, boolean defaultValue);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {{@link #getPlayerInfoBoolean(String, OfflinePlayer, String, boolean)} instead.
+@@ -648,7 +_,7 @@
+      * @param value Value to set
+      */
+     @Deprecated
+-    abstract public void setPlayerInfoBoolean(String world, String player, String node, boolean value);
++    public abstract void setPlayerInfoBoolean(String world, String player, String node, boolean value);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {{@link #setPlayerInfoBoolean(String, OfflinePlayer, String, boolean)} instead.
+@@ -681,7 +_,7 @@
+      * @param defaultValue Default value
+      * @return Value
+      */
+-    abstract public boolean getGroupInfoBoolean(String world, String group, String node, boolean defaultValue);
++    public abstract boolean getGroupInfoBoolean(String world, String group, String node, boolean defaultValue);
+ 
+     /**
+      * Set a players informational node (Boolean) value
+@@ -702,7 +_,7 @@
+      * @param node Permission node
+      * @param value Value to set
+      */
+-    abstract public void setGroupInfoBoolean(String world, String group, String node, boolean value);
++    public abstract void setGroupInfoBoolean(String world, String group, String node, boolean value);
+ 
+     /**
+      * Set a players informational node (Boolean) value
+@@ -738,7 +_,7 @@
+      * @return Value
+      */
+     @Deprecated
+-    abstract public String getPlayerInfoString(String world, String player, String node, String defaultValue);
++    public abstract String getPlayerInfoString(String world, String player, String node, String defaultValue);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {{@link #getPlayerInfoString(String, OfflinePlayer, String, String)} instead.
+@@ -785,7 +_,7 @@
+      * @param value Value to set
+      */
+     @Deprecated
+-    abstract public void setPlayerInfoString(String world, String player, String node, String value);
++    public abstract void setPlayerInfoString(String world, String player, String node, String value);
+ 
+     /**
+      * @deprecated As of VaultAPI 1.4 use {{@link #setPlayerInfoString(String, OfflinePlayer, String, String)} instead.
+@@ -818,7 +_,7 @@
+      * @param defaultValue Default value
+      * @return Value
+      */
+-    abstract public String getGroupInfoString(String world, String group, String node, String defaultValue);
++    public abstract String getGroupInfoString(String world, String group, String node, String defaultValue);
+ 
+     /**
+      * Set a players informational node (String) value
+@@ -839,7 +_,7 @@
+      * @param node Permission node
+      * @param value Value to set
+      */
+-    abstract public void setGroupInfoString(String world, String group, String node, String value);
++    public abstract void setGroupInfoString(String world, String group, String node, String value);
+ 
+     /**
+      * Set a groups informational node (String) value
