@@ -1,0 +1,81 @@
+--- /dev/null
++++ b/src/main/java/net/milkbowl/vault/commands/ConvertCommand.java
+@@ -1,0 +_,78 @@
++package net.milkbowl.vault.commands;
++
++import net.milkbowl.vault.Vault;
++import net.milkbowl.vault.economy.Economy;
++import org.bukkit.Bukkit;
++import org.bukkit.OfflinePlayer;
++import org.bukkit.command.CommandSender;
++import org.bukkit.plugin.RegisteredServiceProvider;
++import org.bukkit.util.StringUtil;
++import org.incendo.cloud.annotations.Argument;
++import org.incendo.cloud.annotations.Command;
++import org.incendo.cloud.annotations.CommandDescription;
++import org.incendo.cloud.annotations.Permission;
++import org.incendo.cloud.annotations.parser.Parser;
++import org.incendo.cloud.annotations.suggestion.Suggestions;
++import org.incendo.cloud.context.CommandContext;
++import org.incendo.cloud.context.CommandInput;
++
++import java.util.ArrayList;
++import java.util.Collection;
++import java.util.List;
++import java.util.Optional;
++import java.util.Set;
++import java.util.function.Function;
++import java.util.stream.Collectors;
++
++public final class ConvertCommand {
++
++    private final Vault vault;
++    private Function<String, String> replaceSpaces = s -> s.replaceAll(" ", "");
++
++    public ConvertCommand(Vault vault) {
++        this.vault = vault;
++    }
++
++    @Command("vault-convert <economyA> <economyB>")
++    @CommandDescription("Converts from one Economy to another")
++    @Permission("vault.admin")
++    public void onConvert(CommandSender sender,
++                          @Argument(value = "economyA", parserName = "economy") Economy economyA,
++                          @Argument(value = "economyB", parserName = "economy") Economy economyB) {
++        sender.sendMessage("This may take some time to convert, expect server lag.");
++        for (OfflinePlayer op : Bukkit.getServer().getOfflinePlayers()) {
++            if (economyA.hasAccount(op)) {
++                if (economyB.hasAccount(op)) {
++                    continue;
++                }
++                economyB.createPlayerAccount(op);
++                final double diff = economyA.getBalance(op) - economyB.getBalance(op);
++                if (diff > 0) {
++                    economyB.depositPlayer(op, diff);
++                } else if (diff < 0) {
++                    economyB.withdrawPlayer(op, -diff);
++                }
++
++            }
++        }
++        sender.sendMessage("Conversion complete, please verify the data before using it.");
++
++    }
++
++    @Parser(name = "economy", suggestions = "economy")
++    public Economy economyParser(CommandContext<CommandSender> context, CommandInput input) {
++        String string = input.readString();
++        Collection<RegisteredServiceProvider<Economy>> econs = vault.getServer().getServicesManager().getRegistrations(Economy.class);
++        Optional<Economy> first = econs.stream().map(RegisteredServiceProvider::getProvider).filter(economy -> economy.getName().replace(" ", "").equalsIgnoreCase(string)).findFirst();
++        return first.orElseThrow();
++    }
++
++    @Suggestions("economy")
++    public List<String> economySuggestions(CommandContext<CommandSender> context, String input) {
++        Collection<RegisteredServiceProvider<Economy>> econs = vault.getServer().getServicesManager().getRegistrations(Economy.class);
++        final Set<String> collect = econs.stream().map(RegisteredServiceProvider::getProvider).map(Economy::getName).map(this.replaceSpaces).collect(Collectors.toSet());
++        return StringUtil.copyPartialMatches(input, collect, new ArrayList<>());
++    }
++
++
++}

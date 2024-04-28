@@ -1,8 +1,11 @@
 --- /dev/null
 +++ b/build.gradle.kts
-@@ -1,0 +_,28 @@
+@@ -1,0 +_,50 @@
 +plugins {
 +    java
++    id("xyz.jpenilla.run-paper") version "2.2.4"
++    id("net.minecrell.plugin-yml.paper") version "0.6.0"
++    id("io.github.goooler.shadow") version "8.1.7"
 +}
 +
 +repositories {
@@ -13,13 +16,17 @@
 +dependencies {
 +    compileOnly("io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
 +    implementation("org.bstats:bstats-bukkit:3.0.2")
++    implementation("org.incendo:cloud-core:2.0.0-beta.5")
++    implementation("org.incendo:cloud-annotations:2.0.0-beta.5")
++    implementation("org.incendo:cloud-paper:2.0.0-beta.5")
++
 +    implementation(project(":coincoffer-api"))
 +}
 +
 +group = "dev.onelitefeather.plugin.coincoffer"
 +version = "1.0.0-SNAPSHOT"
 +description = "CoinCoffer"
-+java.sourceCompatibility = JavaVersion.VERSION_17
++java.sourceCompatibility = JavaVersion.VERSION_21
 +
 +tasks {
 +    compileJava {
@@ -28,4 +35,19 @@
 +    javadoc {
 +        options.encoding = "UTF-8"
 +    }
++    runServer {
++        minecraftVersion("1.20.4")
++    }
++    shadowJar {
++        relocate("org.bstats", "dev.onelitefeather.plugin.coincoffer.org.bstats")
++    }
++}
++
++paper {
++    name = "CoinCoffer"
++    main = "net.milkbowl.vault.Vault"
++    foliaSupported = true
++    apiVersion = "1.19"
++    authors = listOf("TheMeinerLP", "OneLiteFeatherNET")
++    provides = listOf("Vault")
 +}
