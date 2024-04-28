@@ -1,0 +1,5 @@
+--- a/.coveralls
++++ /dev/null
+@@ -1,2 +_,0 @@
+-service_name: travis-pro
+-repo_token: ${env.COVERALLS_REPO_TOKEN}

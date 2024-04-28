@@ -1,0 +1,31 @@
+--- /dev/null
++++ b/build.gradle.kts
+@@ -1,0 +_,28 @@
++plugins {
++    java
++}
++
++repositories {
++    mavenCentral()
++    maven("https://repo.papermc.io/repository/maven-public/")
++}
++
++dependencies {
++    compileOnly("io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
++    implementation("org.bstats:bstats-bukkit:3.0.2")
++    implementation(project(":coincoffer-api"))
++}
++
++group = "dev.onelitefeather.plugin.coincoffer"
++version = "1.0.0-SNAPSHOT"
++description = "CoinCoffer"
++java.sourceCompatibility = JavaVersion.VERSION_17
++
++tasks {
++    compileJava {
++        options.encoding = "UTF-8"
++    }
++    javadoc {
++        options.encoding = "UTF-8"
++    }
++}

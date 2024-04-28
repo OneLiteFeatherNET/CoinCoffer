@@ -1,6 +1,6 @@
 import java.util.Locale
 
-rootProject.name = "Box"
+rootProject.name = "CoinCoffer"
 
 pluginManagement {
     repositories {
@@ -14,7 +14,8 @@ pluginManagement {
         }
     }
 }
-for (name in listOf("CoinCoffer")) {
+for (name in listOf("coincoffer", "coincoffer-api")) {
     val projName = name.lowercase(Locale.ENGLISH)
-    includeBuild(projName)
+    include(projName)
+    findProject(":$projName")!!.projectDir = file(name)
 }
