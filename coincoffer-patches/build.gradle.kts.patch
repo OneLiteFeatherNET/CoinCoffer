@@ -67,7 +67,7 @@
 +hangarPublish {
 +    publications.register("CoinCoffer") {
 +        version.set(project.version.toString())
-+        channel.set("RELEASE")
++        channel.set("Release")
 +        apiKey.set(System.getenv("HANGAR_KEY"))
 +        id.set("CoinCoffer")
 +        platforms {
