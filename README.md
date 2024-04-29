@@ -2,6 +2,7 @@
 
 CoinCoffer is a prototype, opt-in plugin with the base of [Vault](https://www.spigotmc.org/resources/vault.34315/) and hold together with [Glue](https://github.com/OneLiteFeatherNET/Glue) to test Glue, our git patcher for functionality.
 The name CoinCoffer is a name game (also ChatGPT approved) as we tried to find a similar name to Vault.
+![grafik](https://github.com/OneLiteFeatherNET/CoinCoffer/assets/77929075/9e21aee9-9216-45c6-9d5b-8b5e03852d8e)
 
 ## FAQ
 
