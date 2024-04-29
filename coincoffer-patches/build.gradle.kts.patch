@@ -6,6 +6,7 @@
 +    id("xyz.jpenilla.run-paper") version "2.2.4"
 +    id("net.minecrell.plugin-yml.paper") version "0.6.0"
 +    id("io.github.goooler.shadow") version "8.1.7"
++    `maven-publish`
 +}
 +
 +repositories {
@@ -24,7 +25,6 @@
 +}
 +
 +group = "dev.onelitefeather.plugin.coincoffer"
-+version = "1.0.0-SNAPSHOT"
 +description = "CoinCoffer"
 +java.sourceCompatibility = JavaVersion.VERSION_21
 +
