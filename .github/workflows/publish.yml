@@ -20,7 +20,7 @@ jobs:
           architecture: x64
           distribution: "temurin"
       - name: Build with gradle
-        run: ./gradlew applyPatches build modrinth publishAllPublicationsToHangar
+        run: ./gradlew applyPatches build coincoffer:modrinth publishAllPublicationsToHangar
         env:
           TAG_VERSION: ${{ github.ref_name }}
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_KEY }}
