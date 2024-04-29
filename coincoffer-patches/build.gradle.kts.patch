@@ -1,12 +1,14 @@
 --- /dev/null
 +++ b/build.gradle.kts
-@@ -1,0 +_,50 @@
+@@ -1,0 +_,77 @@
 +plugins {
 +    java
 +    id("xyz.jpenilla.run-paper") version "2.2.4"
 +    id("net.minecrell.plugin-yml.paper") version "0.6.0"
 +    id("io.github.goooler.shadow") version "8.1.7"
 +    `maven-publish`
++    id("io.papermc.hangar-publish-plugin") version "0.1.2"
++    id("com.modrinth.minotaur") version "2.+"
 +}
 +
 +repositories {
@@ -50,4 +52,29 @@
 +    apiVersion = "1.19"
 +    authors = listOf("TheMeinerLP", "OneLiteFeatherNET")
 +    provides = listOf("Vault")
++}
++
++modrinth {
++    token.set(System.getenv("MODRINTH_TOKEN"))
++    versionNumber.set(project.version.toString())
++    projectId.set("9KWfS9j4")
++    versionType.set("release")
++    uploadFile.set(tasks.shadowJar)
++    gameVersions.addAll(listOf("1.20.5","1.20.4","1.20.3", "1.20.2", "1.20.1", "1.20", "1.19.4", "1.19.3", "1.19.2", "1.19.1", "1.19"))
++    loaders.add("paper")
++}
++
++hangarPublish {
++    publications.register("CoinCoffer") {
++        version.set(project.version.toString())
++        channel.set("RELEASE")
++        apiKey.set(System.getenv("HANGAR_KEY"))
++        id.set("CoinCoffer")
++        platforms {
++            paper {
++                jar.set(tasks.shadowJar.flatMap { it.archiveFile })
++                platformVersions.set(listOf("1.20.5","1.20.4","1.20.3", "1.20.2", "1.20.1", "1.20", "1.19.4", "1.19.3", "1.19.2", "1.19.1", "1.19"))
++            }
++        }
++    }
 +}

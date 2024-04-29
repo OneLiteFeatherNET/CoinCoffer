@@ -2,9 +2,9 @@ plugins {
     id("dev.onelitefeather.glue") version "0.0.10"
 }
 
-
+val baseVersion = "1.0.0"
+version = System.getenv("TAG_VERSION") ?: "$baseVersion-dev"
 group = "dev.onelitefeather.plugin"
-version = "1.0.0-SNAPSHOT"
 glue {
     upstreams {
         useStandardUpstream("coincoffer") {
