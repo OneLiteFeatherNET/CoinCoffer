@@ -22,9 +22,9 @@ jobs:
       - name: Publish with gradle
         run: |
           ./gradlew applyPatches
-          ./gradle build
-          ./gradle publishAllPublicationsToHangar
-          ./gradle modrinth
+          ./gradlew build
+          ./gradlew publishAllPublicationsToHangar
+          ./gradlew modrinth
         env:
           TAG_VERSION: ${{ github.ref_name }}
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_KEY }}
