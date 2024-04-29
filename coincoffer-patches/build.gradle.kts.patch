@@ -28,7 +28,7 @@
 +
 +group = "dev.onelitefeather.plugin.coincoffer"
 +description = "CoinCoffer"
-+java.sourceCompatibility = JavaVersion.VERSION_21
++java.sourceCompatibility = JavaVersion.VERSION_17
 +
 +tasks {
 +    compileJava {
