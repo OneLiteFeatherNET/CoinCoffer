@@ -19,8 +19,8 @@ jobs:
           java-version: ${{ matrix.java-version }}
           architecture: x64
           distribution: "temurin"
-      - name: Build with gradle
-        run: ./gradlew applyPatches build coincoffer:modrinth publishAllPublicationsToHangar
+      - name: Publish with gradle
+        run: ./gradlew applyPatches build :coincoffer:modrinth publishAllPublicationsToHangar --stacktrace
         env:
           TAG_VERSION: ${{ github.ref_name }}
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_KEY }}
