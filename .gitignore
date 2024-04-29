@@ -43,3 +43,12 @@ bin/
 
 ### Bukkit
 **/run/
+
+
+
+coincoffer-api/
+coincoffer/
+
+vault-api/
+vault/
+

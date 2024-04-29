@@ -12,6 +12,7 @@ pluginManagement {
                 includeGroup("codechicken")
             }
         }
+	maven("https://eldonexus.de/repository/maven-releases/")
     }
 }
 for (name in listOf("coincoffer", "coincoffer-api")) {

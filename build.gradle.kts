@@ -1,5 +1,5 @@
 plugins {
-    id("dev.onelitefeather.glue") version "0.0.3-dev"
+    id("dev.onelitefeather.glue") version "0.0.10"
 }
 
 
