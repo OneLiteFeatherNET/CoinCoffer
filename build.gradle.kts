@@ -1,5 +1,5 @@
 plugins {
-    id("dev.onelitefeather.glue") version "0.0.10"
+    id("dev.onelitefeather.glue") version "0.0.13"
 }
 
 val baseVersion = "1.0.0"
