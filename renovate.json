@@ -1,0 +1,8 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>OneLiteFeatherNET/renovate:default(OneLiteFeatherNET/coincoffer-maintainers)",
+    "github>OneLiteFeatherNET/renovate:paper"
+  ],
+  "ignoreDeps": []
+}
