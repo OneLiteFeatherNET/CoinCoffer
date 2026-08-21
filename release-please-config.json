@@ -6,7 +6,14 @@
   "packages": {
     ".": {
       "package-name": "CoinCoffer",
-      "changelog-path": "CHANGELOG.md"
+      "changelog-path": "CHANGELOG.md",
+      "extra-files": [
+        {
+          "type": "generic",
+          "path": "build.gradle.kts"
+        }
+      ]
     }
-  }
+  },
+  "bootstrap-sha": "bb09ff8e44acf0764e20410310def4598e235432"
 }
